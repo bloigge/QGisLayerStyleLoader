@@ -313,7 +313,6 @@ class LayerStyleLoader:
         global project
         myLegendLayers = self.iface.legendInterface().layers()
         for myLayer in myLegendLayers:
-            print myLayer.name()
             if name == myLayer.name():
                 return myLayer
         return False
@@ -322,4 +321,3 @@ class LayerStyleLoader:
         
         
         
-                

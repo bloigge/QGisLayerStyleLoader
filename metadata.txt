@@ -7,9 +7,9 @@
 # This file should be included when you package your plugin.# Mandatory items:
 
 [general]
-name=Layer Style Laoder
+name=Layer Style Loader
 qgisMinimumVersion=2.0
-description=Load multiple layer styles based on layer names
+description=Load multiple layer styles based on layer names. Select a parent folder. Qml files in the subdirectories which match by layer name will get the style assigned.
 version=0.1
 author=Bernd Loigge
 email=bernd.loigge@gmx.at
@@ -28,11 +28,11 @@ repository=https://github.com/bloigge/QGisLayerStyleLoader.git
 # Tags are comma separated with spaces allowed
 tags=layers, style
 
-homepage=https://github.com/bloigge/QGisLayerStyleLoader
+homepage=http://www.geo-services.at/blog/
 category=Plugins
 icon=icon.png
 # experimental flag
-experimental=True
+experimental=False
 
 # deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
