@@ -16,7 +16,7 @@ email=bernd.loigge@gmx.at
 
 about=Load multiple layer styles based on layer names.
 
-tracker=https://github.com/bloigge/QGisLayerStyleLoader
+tracker=https://github.com/bloigge/QGisLayerStyleLoader/issues
 repository=https://github.com/bloigge/QGisLayerStyleLoader.git
 # End of mandatory metadata
 
