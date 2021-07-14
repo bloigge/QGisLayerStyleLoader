@@ -23,8 +23,8 @@
 
 import os
 
-from PyQt4 import QtGui, uic
-from PyQt4.QtCore import pyqtSignal
+from qgis.PyQt import QtGui, uic
+from qgis.PyQt.QtCore import pyqtSignal
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'layer_style_loader_dockwidget_base.ui'))

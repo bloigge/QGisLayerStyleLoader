@@ -7,6 +7,7 @@
      (at your option) any later version.
 
 """
+from __future__ import absolute_import
 
 __author__ = 'bernd.loigge@gmx.at'
 __date__ = '2016-09-16'
@@ -14,11 +15,11 @@ __copyright__ = 'Copyright 2016, Bernd Loigge'
 
 import unittest
 
-from PyQt4.QtGui import QDockWidget
+from qgis.PyQt.QtWidgets import QDockWidget
 
 from layer_style_loader_dockwidget import LayerStyleLoaderDockWidget
 
-from utilities import get_qgis_app
+from .utilities import get_qgis_app
 
 QGIS_APP = get_qgis_app()
 
