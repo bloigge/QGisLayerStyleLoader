@@ -35,8 +35,7 @@ def main(parameters, arguments):
         parameters.server,
         parameters.port,
         ENDPOINT)
-    # fix_print_with_import
-    # fix_print_with_import
+
 print("Connecting to: %s" % hide_password(address))
 
     server = xmlrpc.client.ServerProxy(address, verbose=VERBOSE)
@@ -44,35 +43,21 @@ print("Connecting to: %s" % hide_password(address))
     try:
         plugin_id, version_id = server.plugin.upload(
             xmlrpc.client.Binary(open(arguments[0]).read()))
-        # fix_print_with_import
-        # fix_print_with_import
+        
 print("Plugin ID: %s" % plugin_id)
-        # fix_print_with_import
-        # fix_print_with_import
 print("Version ID: %s" % version_id)
     except xmlrpc.client.ProtocolError as err:
-        # fix_print_with_import
+        
         print("A protocol error occurred")
-        # fix_print_with_import
-        # fix_print_with_import
+        
 print("URL: %s" % hide_password(err.url, 0))
-        # fix_print_with_import
-        # fix_print_with_import
 print("HTTP/HTTPS headers: %s" % err.headers)
-        # fix_print_with_import
-        # fix_print_with_import
-print("Error code: %d" % err.errcode)
-        # fix_print_with_import
-        # fix_print_with_import
+print("Error code: %d" % err.errcode)  
 print("Error message: %s" % err.errmsg)
     except xmlrpc.client.Fault as err:
-        # fix_print_with_import
         print("A fault occurred")
-        # fix_print_with_import
-        # fix_print_with_import
+        
 print("Fault code: %d" % err.faultCode)
-        # fix_print_with_import
-        # fix_print_with_import
 print("Fault string: %s" % err.faultString)
 
 
@@ -109,7 +94,6 @@ if __name__ == "__main__":
         help="Specify server name", metavar="plugins.qgis.org")
     options, args = parser.parse_args()
     if len(args) != 1:
-        # fix_print_with_import
         print("Please specify zip file.\n")
         parser.print_help()
         sys.exit(1)
@@ -120,8 +104,7 @@ if __name__ == "__main__":
     if not options.username:
         # interactive mode
         username = getpass.getuser()
-        # fix_print_with_import
-        # fix_print_with_import
+        
 print("Please enter user name [%s] :" % username, end=' ')
         res = input()
         if res != "":
