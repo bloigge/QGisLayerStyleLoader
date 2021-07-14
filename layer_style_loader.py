@@ -315,7 +315,7 @@ class LayerStyleLoader(object):
     
     def getLayerByName(self, name):
         global project
-        myLegendLayers = self.iface.legendInterface().layers()
+        myLegendLayers = layers = [tree_layer.layer() for tree_layer in QgsProject.instance().layerTreeRoot().findLayers()]
         for myLayer in myLegendLayers:
             if name == myLayer.name():
                 return myLayer
