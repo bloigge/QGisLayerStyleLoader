@@ -20,19 +20,23 @@
  *                                                                         *
  ***************************************************************************/
 """
-from qgis.core import *
-from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, Qt
-from PyQt4.QtGui import QAction, QIcon, QFileDialog
+from __future__ import absolute_import
+from builtins import str
+from builtins import object
+from qgis.core import QgsProject
+from qgis.PyQt.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, Qt
+from qgis.PyQt.QtWidgets import QAction, QFileDialog
+from qgis.PyQt.QtGui import QIcon
 # Initialize Qt resources from file resources.py
-import resources
+from . import resources
 
 # Import the code for the DockWidget
-from layer_style_loader_dockwidget import LayerStyleLoaderDockWidget
+from .layer_style_loader_dockwidget import LayerStyleLoaderDockWidget
 import os.path
 project = QgsProject.instance()
 
 
-class LayerStyleLoader:
+class LayerStyleLoader(object):
     """QGIS Plugin Implementation."""
 
     def __init__(self, iface):
@@ -311,7 +315,7 @@ class LayerStyleLoader:
     
     def getLayerByName(self, name):
         global project
-        myLegendLayers = self.iface.legendInterface().layers()
+        myLegendLayers = layers = [tree_layer.layer() for tree_layer in QgsProject.instance().layerTreeRoot().findLayers()]
         for myLayer in myLegendLayers:
             if name == myLayer.name():
                 return myLayer
