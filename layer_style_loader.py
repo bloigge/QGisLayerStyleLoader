@@ -293,6 +293,8 @@ class LayerStyleLoader(object):
         if folderpath != "":
             comboBox = self.dockwidget.comboBox
             comboBox.clear()
+            if folderpath.startswith('.'):
+                folderpath = project.homePath() + folderpath[1:]
             data = os.listdir(folderpath)
             folder = []
             for content in data:
@@ -303,6 +305,8 @@ class LayerStyleLoader(object):
     def loadLayerStyles(self):
         global project
         folderpath = project.readEntry("styles", "styleLayerPath", "nothing")[0]
+        if folderpath.startswith('.'):
+            folderpath = project.homePath() + folderpath[1:]
         styling = folderpath + os.path.normcase("/") + self.dockwidget.comboBox.currentText()
         
         # Check if any QML File in Folder
