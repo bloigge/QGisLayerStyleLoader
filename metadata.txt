@@ -10,7 +10,7 @@
 name=Layer Style Loader
 qgisMinimumVersion=3.0
 description=Load multiple layer styles based on layer names. Select a parent folder. Qml files in the subdirectories which match by layer name will get the style assigned.
-version=0.1
+version=0.3
 author=Bernd Loigge
 email=bernd.loigge@gmx.at
 
