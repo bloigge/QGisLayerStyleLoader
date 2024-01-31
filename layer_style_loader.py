@@ -276,7 +276,7 @@ class LayerStyleLoader(object):
         
     def saveFolderPathInProject(self, folderpath):
         global project
-        project.writeEntry("styles", "styleLayerPath", folderpath)
+        project.writeEntry("styles", "styleLayerPath", project.writePath(folderpath))
         
     def loadFolderPathInProject(self):
         global project
