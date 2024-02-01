@@ -263,6 +263,8 @@ class LayerStyleLoader(object):
         cPath = project.readEntry("styles", "styleLayerPath", "nothing")[0]
         naming = "Select Parent Style Folder"
         if  cPath != "nothing":
+            if cPath.startswith('.'):
+                cPath = project.homePath() + cPath[1:]
             folderpath = QFileDialog.getExistingDirectory(self.dockwidget, naming, cPath)
         else:
             folderpath = QFileDialog.getExistingDirectory(self.dockwidget, naming, os.path.expanduser("~"))
@@ -276,7 +278,7 @@ class LayerStyleLoader(object):
         
     def saveFolderPathInProject(self, folderpath):
         global project
-        project.writeEntry("styles", "styleLayerPath", folderpath)
+        project.writeEntry("styles", "styleLayerPath", project.writePath(folderpath))
         
     def loadFolderPathInProject(self):
         global project
